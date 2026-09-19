@@ -43,7 +43,7 @@ Goal: identical skill copies and a reproducible assessment. Independent test: ve
 
 - [X] T017 Check audit line references, public content, skill validator, route coverage, all tests and staged diff; record evidence in reports/validation.md (FR-012, SC-004).
 - [X] T018 Execute speckit-converge against spec/plan/tasks, resolve appended tasks if necessary, and record requirements evidence in reports/convergence.md (SC-005).
-- [ ] T019 Commit the verified deliverable and push feature/sdd-fase-295 only; report commit and test results (Constitution workflow).
+- [X] T019 Commit the verified deliverable and push feature/sdd-fase-295 only; report commit and test results (Constitution workflow). Delivery evidence: reports/delivery.md.
 
 ## Dependencies and execution order
 
