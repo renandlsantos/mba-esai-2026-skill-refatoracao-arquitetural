@@ -1,0 +1,12 @@
+# Research and decisions
+
+- Decision: Codex `.agents/skills/refactor-arch/` and `$refactor-arch` invocation. Rationale: installed Spec Kit skills already demonstrate this convention; official documentation confirms it. Alternative: duplicate `.claude` folders would add unnecessary divergent copies. Source: https://developers.openai.com/codex/skills/ (consulted 2026-09-19).
+- Decision: concise SKILL.md plus five progressive-disclosure references, following official skill-creator workflow. Evaluate three fixture prompts sequentially in the active agent because delegation is prohibited for this task; no claim of blinded/baseline model benchmark. Generate the official static review viewer and deterministic grading evidence.
+- Decision: use Flask factories to inject temporary configuration, request-scoped SQLite and SQLAlchemy session ownership. Alternative: global shared SQLite connection can interleave request transactions. Source: https://flask.palletsprojects.com/en/stable/patterns/appfactories/.
+- Decision: replace Query.get with Session.get and ORM select/scalars where appropriate. Query.get is a legacy API in SQLAlchemy 2.0; do not claim all Query methods were removed. Source: https://docs.sqlalchemy.org/en/20/orm/queryguide/query.html#sqlalchemy.orm.Query.get.
+- Decision: timezone-aware current time at clock boundary; convert explicitly to UTC-naive where existing SQLite schema expects naive values. datetime.utcnow is deprecated since Python 3.12. Source: https://docs.python.org/3/library/datetime.html#datetime.datetime.utcnow.
+- Decision: use salted password hashing (Werkzeug scrypt / Node crypto scrypt), redact password fields, restrict administrative utilities and use constant-time token comparison. Legacy password migration must be explicit and tested; no silent seed of known credentials.
+- Decision: keep original successful route shapes, allow stricter validation and documented admin guards. Payment remains an injected educational simulator, never an external gateway call. Preserve existing tables and data; test fixtures are isolated.
+- Course concepts consulted locally: reference separation (17529), progressive disclosure (17544), skill creation (17545), evidence-based skill use (17546). No lecture text or private transcript is copied into this repository.
+
+All planning unknowns resolved by inspection; installed dependency versions and actual boot behavior will be recorded by validation rather than assumed.

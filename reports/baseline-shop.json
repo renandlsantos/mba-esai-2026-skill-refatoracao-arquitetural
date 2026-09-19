@@ -1,0 +1,189 @@
+{
+  "project": "shop",
+  "routes": [
+    {
+      "method": "GET",
+      "rule": "/"
+    },
+    {
+      "method": "POST",
+      "rule": "/admin/query"
+    },
+    {
+      "method": "POST",
+      "rule": "/admin/reset-db"
+    },
+    {
+      "method": "GET",
+      "rule": "/health"
+    },
+    {
+      "method": "POST",
+      "rule": "/login"
+    },
+    {
+      "method": "GET",
+      "rule": "/pedidos"
+    },
+    {
+      "method": "POST",
+      "rule": "/pedidos"
+    },
+    {
+      "method": "PUT",
+      "rule": "/pedidos/<int:pedido_id>/status"
+    },
+    {
+      "method": "GET",
+      "rule": "/pedidos/usuario/<int:usuario_id>"
+    },
+    {
+      "method": "GET",
+      "rule": "/produtos"
+    },
+    {
+      "method": "POST",
+      "rule": "/produtos"
+    },
+    {
+      "method": "DELETE",
+      "rule": "/produtos/<int:id>"
+    },
+    {
+      "method": "GET",
+      "rule": "/produtos/<int:id>"
+    },
+    {
+      "method": "PUT",
+      "rule": "/produtos/<int:id>"
+    },
+    {
+      "method": "GET",
+      "rule": "/produtos/busca"
+    },
+    {
+      "method": "GET",
+      "rule": "/relatorios/vendas"
+    },
+    {
+      "method": "GET",
+      "rule": "/usuarios"
+    },
+    {
+      "method": "POST",
+      "rule": "/usuarios"
+    },
+    {
+      "method": "GET",
+      "rule": "/usuarios/<int:id>"
+    }
+  ],
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/produtos",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/produtos/busca?q=Mouse",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/produtos",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/produtos/11",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/produtos/11",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/usuarios",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/usuarios",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/usuarios/4",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/login",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/pedidos",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/pedidos",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/pedidos/usuario/4",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/pedidos/1/status",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/relatorios/vendas",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/produtos/11",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/admin/query",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/login",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/admin/reset-db",
+      "status": 200
+    }
+  ],
+  "observed_defects": {
+    "password_exposed": true,
+    "secret_exposed": true,
+    "injection_login_status": 200
+  },
+  "isolation": "copied baseline, synthetic data; no externally bound server"
+}

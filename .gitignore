@@ -10,3 +10,10 @@ venv/
 # SQLite
 *.db
 instance/
+
+.work/
+*.db-*
+.env.*
+!.env.example
+.DS_Store
+*.egg-info/

@@ -1,0 +1,11 @@
+test_admin_guards_errors_and_bounded_queries (test_shop.ShopTests.test_admin_guards_errors_and_bounded_queries) ... ok
+test_all_routes_workflow (test_shop.ShopTests.test_all_routes_workflow) ... ok
+test_discount_boundaries_and_explicit_legacy_migration (test_shop.ShopTests.test_discount_boundaries_and_explicit_legacy_migration) ... ok
+test_invalid_inputs_and_atomic_order (test_shop.ShopTests.test_invalid_inputs_and_atomic_order) ... [2026-09-19 16:59:38,079] ERROR in errors: Persistence operation failed: IntegrityError
+ok
+test_passwords_and_sql_injection (test_shop.ShopTests.test_passwords_and_sql_injection) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.284s
+
+OK

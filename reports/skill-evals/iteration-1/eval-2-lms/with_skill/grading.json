@@ -1,0 +1,50 @@
+{
+  "expectations": [
+    {
+      "text": "Reports correct stack and domain from observed sources",
+      "passed": true,
+      "evidence": "Read baseline inventory and manifests; stack and domain in audit.md; 9 findings checked against baseline file line counts."
+    },
+    {
+      "text": "Contains at least five evidenced findings including HIGH/CRITICAL, two MEDIUM and two LOW",
+      "passed": true,
+      "evidence": "9 findings: CRITICAL=2, HIGH=3, MEDIUM=2, LOW=2"
+    },
+    {
+      "text": "Preserves application source hashes at the confirmation boundary",
+      "passed": true,
+      "evidence": "All first-party source hashes matched baseline before coordinator confirmation; approval.md records response origin and report hashes."
+    },
+    {
+      "text": "After approval, boots and exercises every original method/path",
+      "passed": true,
+      "evidence": "Actual test suite passes; 3/3 original routes exercised; loopback boot result in after-validation.json."
+    },
+    {
+      "text": "Contains no private transcripts or secret values in report",
+      "passed": true,
+      "evidence": "Audits contain authored analysis and code references, no course transcript or actual credential values. Static tracked-file/content inspection accompanies validation."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1
+  },
+  "claims": [
+    {
+      "claim": "Independent blind benchmark",
+      "type": "quality",
+      "verified": false,
+      "evidence": "Not claimed: same agent authored and executed all three cases; no baseline model run or randomized comparison."
+    }
+  ],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "Future independent holdout projects and rejected-approval runs are needed to measure generalization and false positives. Current evidence validates these three supplied fixtures."
+      }
+    ]
+  }
+}

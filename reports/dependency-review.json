@@ -1,0 +1,19 @@
+{
+  "profile": "package-risk",
+  "risk_posture": "UNKNOWN",
+  "summary": "Exact existing sqlite3@5.1.7 reviewed through dependency-reviewer; live Endor evidence unavailable. No safety verdict inferred. Existing manifest dependencies are installed solely in ignored local environments under user-authorized development scope.",
+  "evidence_queries": [],
+  "policy_evaluations": [],
+  "policy_context": {},
+  "data_gaps": [
+    "unavailable:endor_mcp_package_risk_unavailable",
+    "unavailable:trusted_policy_pack"
+  ],
+  "dependencies_reviewed": [
+    {
+      "ecosystem": "npm",
+      "name": "sqlite3",
+      "version": "5.1.7"
+    }
+  ]
+}

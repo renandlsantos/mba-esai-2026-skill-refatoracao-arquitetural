@@ -1,0 +1,835 @@
+{
+  "generatedAt": "2026-09-19T20:00:48Z",
+  "tests": [
+    {
+      "project": "shop",
+      "command": [
+        "$REPO/.work/venv-shop/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_shop.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 0.393,
+      "stdout": "",
+      "stderr": "test_admin_guards_errors_and_bounded_queries (test_shop.ShopTests.test_admin_guards_errors_and_bounded_queries) ... ok\ntest_all_routes_workflow (test_shop.ShopTests.test_all_routes_workflow) ... ok\ntest_discount_boundaries_and_explicit_legacy_migration (test_shop.ShopTests.test_discount_boundaries_and_explicit_legacy_migration) ... ok\ntest_invalid_inputs_and_atomic_order (test_shop.ShopTests.test_invalid_inputs_and_atomic_order) ... [2026-09-19 17:00:45,538] ERROR in errors: Persistence operation failed: IntegrityError\nok\ntest_passwords_and_sql_injection (test_shop.ShopTests.test_passwords_and_sql_injection) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.284s\n\nOK\n"
+    },
+    {
+      "project": "tasks",
+      "command": [
+        "$REPO/.work/venv-tasks/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_tasks.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 0.882,
+      "stdout": "",
+      "stderr": "test_all_routes (test_tasks.TaskTests.test_all_routes) ... ok\ntest_credentials_tokens_and_duplicate_email (test_tasks.TaskTests.test_credentials_tokens_and_duplicate_email) ... ok\ntest_explicit_seed_legacy_migration_and_disabled_notifications (test_tasks.TaskTests.test_explicit_seed_legacy_migration_and_disabled_notifications) ... ok\ntest_n_plus_one_and_seed_guard_and_deletion (test_tasks.TaskTests.test_n_plus_one_and_seed_guard_and_deletion) ... ok\ntest_validation_and_atomic_update (test_tasks.TaskTests.test_validation_and_atomic_update) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.670s\n\nOK\n"
+    },
+    {
+      "project": "lms",
+      "command": [
+        "node",
+        "--test",
+        "test/api.test.js"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 0.752,
+      "stdout": "✔ all routes, checkout denial, admin and dependent cleanup (82.884833ms)\n✔ invalid input and secrets never enter logs (53.490333ms)\n✔ failed payment insert rolls back user, enrollment and payment (24.737542ms)\n✔ concurrent checkouts serialize transactions and report query count stays bounded (185.801584ms)\n✔ password hashes use independent salts and reject wrong values (92.919667ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 591.9855\n",
+      "stderr": ""
+    }
+  ],
+  "routeCoverage": [
+    {
+      "project": "shop",
+      "originalRoutes": 19,
+      "currentRoutes": 19,
+      "coveredRoutes": 19,
+      "calls": [
+        {
+          "method": "POST",
+          "path": "/usuarios",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/produtos",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/pedidos",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/pedidos",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/pedidos",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/pedidos",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/admin/reset-db",
+          "status": 403
+        },
+        {
+          "method": "POST",
+          "path": "/admin/query",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/missing",
+          "status": 404
+        },
+        {
+          "method": "PATCH",
+          "path": "/produtos",
+          "status": 405
+        },
+        {
+          "method": "PUT",
+          "path": "/pedidos/999/status",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/health",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/usuarios",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/produtos",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/produtos",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/produtos/busca?q=água&preco_min=0",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/produtos/1",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/produtos/1",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/usuarios",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/usuarios/1",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/login",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/pedidos",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/pedidos",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/pedidos/usuario/1",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/pedidos/1/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/relatorios/vendas",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/produtos/1",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/admin/query",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/admin/reset-db",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/produtos",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/usuarios",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/produtos",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/produtos",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/produtos",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/produtos",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/produtos",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/pedidos",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/pedidos",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/pedidos",
+          "status": 404
+        },
+        {
+          "method": "GET",
+          "path": "/produtos/1",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/pedidos",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/pedidos",
+          "status": 500
+        },
+        {
+          "method": "GET",
+          "path": "/produtos/1",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/pedidos",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/usuarios",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/produtos",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/usuarios",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/usuarios/1",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/health",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/login",
+          "status": 401
+        },
+        {
+          "method": "GET",
+          "path": "/produtos/busca?q=%27%20OR%201%3D1%20--",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "project": "tasks",
+      "originalRoutes": 22,
+      "currentRoutes": 22,
+      "coveredRoutes": 22,
+      "calls": [
+        {
+          "method": "GET",
+          "path": "/",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/health",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/users",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/categories",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/users",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/users/1",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/users/1",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/login",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/categories",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/categories/1",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/tasks",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/tasks/1",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/tasks/1",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/tasks/search?q=Synthetic&priority=3",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/tasks/stats",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/users/1/tasks",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/reports/summary",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/reports/user/1",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/tasks/1",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/categories/1",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/users/1",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/users",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/users",
+          "status": 409
+        },
+        {
+          "method": "POST",
+          "path": "/login",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/users",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/users/1",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/login",
+          "status": 401
+        },
+        {
+          "method": "PUT",
+          "path": "/users/1",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/login",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/tasks",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/categories",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/users",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/users",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/users",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/users",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/users",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/tasks",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/users",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/reports/summary",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/categories/1",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/tasks",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/users/5",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/tasks",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/users",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 201
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 404
+        },
+        {
+          "method": "PUT",
+          "path": "/tasks/1",
+          "status": 400
+        },
+        {
+          "method": "GET",
+          "path": "/tasks/1",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/users/1",
+          "status": 400
+        },
+        {
+          "method": "GET",
+          "path": "/users/1",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/categories",
+          "status": 400
+        },
+        {
+          "method": "GET",
+          "path": "/tasks/search?priority=x",
+          "status": 400
+        },
+        {
+          "method": "GET",
+          "path": "/not-found",
+          "status": 404
+        },
+        {
+          "method": "PATCH",
+          "path": "/tasks",
+          "status": 405
+        }
+      ]
+    },
+    {
+      "project": "lms",
+      "originalRoutes": 3,
+      "currentRoutes": 3,
+      "coveredRoutes": 3,
+      "calls": [
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 400
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/financial-report",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/financial-report",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/users/1",
+          "status": 403
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/users/1",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/users/999",
+          "status": 404
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 400
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/unknown",
+          "status": 404
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 401
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 500
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/financial-report",
+          "status": 200
+        }
+      ]
+    }
+  ],
+  "smoke": [
+    {
+      "project": "shop",
+      "boundHost": "127.0.0.1",
+      "endpoint": "/health",
+      "status": 200,
+      "stdout": " * Serving Flask app 'app'\n * Debug mode: off\n",
+      "stderr": "\u001b[31m\u001b[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.\u001b[0m\n * Running on http://127.0.0.1:49390\n\u001b[33mPress CTRL+C to quit\u001b[0m\n127.0.0.1 - - [19/Sep/2026 17:00:47] \"GET /health HTTP/1.1\" 200 -\n",
+      "processStopped": true
+    },
+    {
+      "project": "tasks",
+      "boundHost": "127.0.0.1",
+      "endpoint": "/health",
+      "status": 200,
+      "stdout": " * Serving Flask app 'app'\n * Debug mode: off\n",
+      "stderr": "\u001b[31m\u001b[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.\u001b[0m\n * Running on http://127.0.0.1:49393\n\u001b[33mPress CTRL+C to quit\u001b[0m\n127.0.0.1 - - [19/Sep/2026 17:00:47] \"GET /health HTTP/1.1\" 200 -\n",
+      "processStopped": true
+    },
+    {
+      "project": "lms",
+      "boundHost": "127.0.0.1",
+      "endpoint": "/api/admin/financial-report",
+      "status": 403,
+      "stdout": "LMS ready on 127.0.0.1:49397\n",
+      "stderr": "",
+      "processStopped": true
+    }
+  ],
+  "skillCopiesIdentical": true,
+  "skillFiles": {
+    "SKILL.md": "1865f7c915ef1940288370a1892945316db52d0a82b5ccb4bafab5833051f874",
+    "evals/evals.json": "6b5445fd390144e49782e714a7c18f202465393aff43bdf0697997c395be08a0",
+    "references/project-analysis.md": "b73e7b3b56b0e05913845bfa9e2f0bf4eb6ce41cceb00aa84ca285679b31217a",
+    "references/refactoring-playbook.md": "45d3d3257c3d740fde866e6da4150ad57f59eff7b09ee51e4d14da3c242bc1c2",
+    "references/audit-template.md": "b5aaafe6bf84a3261b56352617d5c9c8010ca965a4d92b5ebbb199b5d28d4ec5",
+    "references/anti-patterns.md": "7328d85e00d9389ddcc3243f6436707df5b2f29079b2016783c950e36e89f13c",
+    "references/mvc-guidelines.md": "3b57e24f9cea3a627e844dfae8d4f223b878e8944a4f115022927bbcc649e730"
+  },
+  "totalOriginalRoutes": 44,
+  "totalCoveredRoutes": 44
+}

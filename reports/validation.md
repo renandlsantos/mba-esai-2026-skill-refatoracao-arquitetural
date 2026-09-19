@@ -1,0 +1,11 @@
+# Validation record
+
+- Baseline revision: 6d1ce6248c3e956801010a89d8bdaab48029bf30. Source SHA256 captured before edits and verified at the approval boundary.
+- Baseline: 46 calls for 44 original methods/paths (Shop19, LMS3, Tasks22), reproduced from Git in disposable copies by scripts/reproduce_baseline.py.
+- Result: 15 tests (five per application), 44/44 routes covered; inventory normalized only parameter variable names, not methods or literal path components. Three actual loopback servers booted and were stopped. Structured detail: after-validation.json.
+- Regression coverage: SQLi, secret/hash serialization, repeated-product stock, injected transaction failure, concurrent checkout, bounded queries (Shop2, LMS1, Tasks1/2/3), invalid bodies/types/dates/references, duplicate emails, token tampering/expiration, explicit legacy password migration, empty-only seed and SMTP disabled.
+- Ruff F check passed; official skill-creator quick_validate passed; skill copies identical. Markdown deliverable links and audit baseline line ranges reviewed. git diff --check passed before staging and commit.
+- No private lecture transcripts or local user paths in deliverable text. Tests/logs use synthetic identities; no card/credential values are emitted. Databases/environments/node_modules remain ignored.
+- Endor package-risk profile could not obtain live tool evidence, recorded UNKNOWN without declaring dependency safety. Existing exact dependencies installed only in local environments.
+- Failures investigated: missing sqlite3 binding was due to disabled package lifecycle scripts, resolved by the inspected native installer; initial factory tests failed on baseline lacking factories; Express baseline import started its unconditional listener and was immediately terminated, then removed through require.main/factory design; dotenv ancestral auto-load warning resolved with explicit load_dotenv=False/FLASK_SKIP_DOTENV=1. No external dotenv file was inspected.
+- The three skill evals passed 15 evidence assertions. Author/executor/assessor is the same agent, so results do not measure independent generalization, false positives or model uplift. Static official viewer: skill-evals/review.html.

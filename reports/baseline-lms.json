@@ -1,0 +1,44 @@
+{
+  "project": "lms",
+  "routes": [
+    {
+      "method": "POST",
+      "rule": "/api/checkout"
+    },
+    {
+      "method": "GET",
+      "rule": "/api/admin/financial-report"
+    },
+    {
+      "method": "DELETE",
+      "rule": "/api/users/:id"
+    }
+  ],
+  "checks": [
+    {
+      "method": "POST",
+      "path": "/api/checkout",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/checkout",
+      "status": 400
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/financial-report",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/users/1",
+      "status": 200
+    }
+  ],
+  "observed_defects": {
+    "card_logged": true,
+    "gateway_key_logged": true
+  },
+  "isolation": "in-memory database, synthetic data, loopback ephemeral port"
+}

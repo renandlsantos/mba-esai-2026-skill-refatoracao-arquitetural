@@ -1,0 +1,136 @@
+{
+  "revision": "6d1ce6248c3e956801010a89d8bdaab48029bf30",
+  "projects": [
+    {
+      "project": "code-smells-project",
+      "sourceCount": 4,
+      "sourceLines": 780,
+      "files": [
+        {
+          "path": "code-smells-project/app.py",
+          "lines": 88,
+          "sha256": "2ce0981b36199939d2100e8d788a6081637e70932e07abf61da309bfb655323c"
+        },
+        {
+          "path": "code-smells-project/controllers.py",
+          "lines": 292,
+          "sha256": "41542c293ad5b21dbcb6cb1154d068dbe35aad55e6879f6fb7fc0d72217b1b4f"
+        },
+        {
+          "path": "code-smells-project/database.py",
+          "lines": 86,
+          "sha256": "cb15ddec38ed506fd2655960deb4f8cad5b830846cd5e987fb28a6c633bf8707"
+        },
+        {
+          "path": "code-smells-project/models.py",
+          "lines": 314,
+          "sha256": "6832a37cc4fe8632c40b5580bb3e835bc9eafc0ab1ba4249c016fbe0e7fe9345"
+        }
+      ]
+    },
+    {
+      "project": "ecommerce-api-legacy",
+      "sourceCount": 3,
+      "sourceLines": 180,
+      "files": [
+        {
+          "path": "ecommerce-api-legacy/src/AppManager.js",
+          "lines": 141,
+          "sha256": "fe40e39220536fe666a9af818c259ab5844ee77fac556211770f4997650b4104"
+        },
+        {
+          "path": "ecommerce-api-legacy/src/app.js",
+          "lines": 14,
+          "sha256": "d2096cb2ff25af262c63053fc861605979ae270c8949e9ebabf7de18e76ffc4c"
+        },
+        {
+          "path": "ecommerce-api-legacy/src/utils.js",
+          "lines": 25,
+          "sha256": "58eebf3e99911451cd54b3a6f42f1b3f123ef0d4e8f6dd60c55444ed2b45333d"
+        }
+      ]
+    },
+    {
+      "project": "task-manager-api",
+      "sourceCount": 15,
+      "sourceLines": 1158,
+      "files": [
+        {
+          "path": "task-manager-api/app.py",
+          "lines": 34,
+          "sha256": "5589fe307799449d446d081d4de702b7cf37eafa1b2ec7aa7463057f66531558"
+        },
+        {
+          "path": "task-manager-api/database.py",
+          "lines": 3,
+          "sha256": "80ed315e56743af6c322cbea92e65105b3873dff3a98c99de3ce94ae07becac5"
+        },
+        {
+          "path": "task-manager-api/models/__init__.py",
+          "lines": 3,
+          "sha256": "706f2d67d6d11df57f0a3b12e0bf88827e9e56a53171a190a19c572186be41d0"
+        },
+        {
+          "path": "task-manager-api/models/category.py",
+          "lines": 21,
+          "sha256": "3e60ddfb42637b54df550f07c1640e8e0370c34fe3a012dfd3dadcaed0cfeec5"
+        },
+        {
+          "path": "task-manager-api/models/task.py",
+          "lines": 60,
+          "sha256": "c4aeb49b843740023830ebb577fc5853936651a32076fa94fde686c997b25fda"
+        },
+        {
+          "path": "task-manager-api/models/user.py",
+          "lines": 38,
+          "sha256": "bb5e52494c02d7de4c467f51811778677e3b2a0cc864b93298f18edfb1531c97"
+        },
+        {
+          "path": "task-manager-api/routes/__init__.py",
+          "lines": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "path": "task-manager-api/routes/report_routes.py",
+          "lines": 223,
+          "sha256": "6b930f7c3986ad595ea6df368bd32742f7326b91b7ef3f2040d971cdf2c8b7d5"
+        },
+        {
+          "path": "task-manager-api/routes/task_routes.py",
+          "lines": 299,
+          "sha256": "1b3a327029c9b6fe5321ad817d79d2bc4cbf851d2aa0b24b3d27d2cdbbfc5425"
+        },
+        {
+          "path": "task-manager-api/routes/user_routes.py",
+          "lines": 211,
+          "sha256": "3835f0e9be7f657bf2f8b82603ab428a048517aed0c7c8db6a0f9ae79b8fc350"
+        },
+        {
+          "path": "task-manager-api/seed.py",
+          "lines": 99,
+          "sha256": "828707cd10f7ce3de634ae558d82d1ac5492f32826b8c0ec054640f7660cee48"
+        },
+        {
+          "path": "task-manager-api/services/__init__.py",
+          "lines": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "path": "task-manager-api/services/notification_service.py",
+          "lines": 48,
+          "sha256": "ee009841e2c547a41b6646a764e92b32db834970130540162991827bf7554bff"
+        },
+        {
+          "path": "task-manager-api/utils/__init__.py",
+          "lines": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "path": "task-manager-api/utils/helpers.py",
+          "lines": 116,
+          "sha256": "c1d07041b969c9bbf28d15a3f299127134184aceae1d35c86bbf7b9ef8cdb5f4"
+        }
+      ]
+    }
+  ]
+}
