@@ -1,0 +1,10 @@
+test_all_routes (test_tasks.TaskTests.test_all_routes) ... ok
+test_credentials_tokens_and_duplicate_email (test_tasks.TaskTests.test_credentials_tokens_and_duplicate_email) ... ok
+test_explicit_seed_legacy_migration_and_disabled_notifications (test_tasks.TaskTests.test_explicit_seed_legacy_migration_and_disabled_notifications) ... ok
+test_n_plus_one_and_seed_guard_and_deletion (test_tasks.TaskTests.test_n_plus_one_and_seed_guard_and_deletion) ... ok
+test_validation_and_atomic_update (test_tasks.TaskTests.test_validation_and_atomic_update) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.605s
+
+OK

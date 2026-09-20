@@ -1,0 +1,448 @@
+{
+  "baselineRevision": "6d1ce6248c3e956801010a89d8bdaab48029bf30",
+  "projects": [
+    {
+      "project": "shop",
+      "routes": [
+        {
+          "method": "GET",
+          "rule": "/"
+        },
+        {
+          "method": "POST",
+          "rule": "/admin/query"
+        },
+        {
+          "method": "POST",
+          "rule": "/admin/reset-db"
+        },
+        {
+          "method": "GET",
+          "rule": "/health"
+        },
+        {
+          "method": "POST",
+          "rule": "/login"
+        },
+        {
+          "method": "GET",
+          "rule": "/pedidos"
+        },
+        {
+          "method": "POST",
+          "rule": "/pedidos"
+        },
+        {
+          "method": "PUT",
+          "rule": "/pedidos/<int:pedido_id>/status"
+        },
+        {
+          "method": "GET",
+          "rule": "/pedidos/usuario/<int:usuario_id>"
+        },
+        {
+          "method": "GET",
+          "rule": "/produtos"
+        },
+        {
+          "method": "POST",
+          "rule": "/produtos"
+        },
+        {
+          "method": "DELETE",
+          "rule": "/produtos/<int:id>"
+        },
+        {
+          "method": "GET",
+          "rule": "/produtos/<int:id>"
+        },
+        {
+          "method": "PUT",
+          "rule": "/produtos/<int:id>"
+        },
+        {
+          "method": "GET",
+          "rule": "/produtos/busca"
+        },
+        {
+          "method": "GET",
+          "rule": "/relatorios/vendas"
+        },
+        {
+          "method": "GET",
+          "rule": "/usuarios"
+        },
+        {
+          "method": "POST",
+          "rule": "/usuarios"
+        },
+        {
+          "method": "GET",
+          "rule": "/usuarios/<int:id>"
+        }
+      ],
+      "checks": [
+        {
+          "method": "GET",
+          "path": "/",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/health",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/produtos",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/produtos/busca?q=Mouse",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/produtos",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/produtos/11",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/produtos/11",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/usuarios",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/usuarios",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/usuarios/4",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/login",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/pedidos",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/pedidos",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/pedidos/usuario/4",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/pedidos/1/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/relatorios/vendas",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/produtos/11",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/admin/query",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/login",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/admin/reset-db",
+          "status": 200
+        }
+      ],
+      "observed_defects": {
+        "password_exposed": true,
+        "secret_exposed": true,
+        "injection_login_status": 200
+      },
+      "isolation": "copied baseline, synthetic data; no externally bound server"
+    },
+    {
+      "project": "lms",
+      "routes": [
+        {
+          "method": "POST",
+          "rule": "/api/checkout"
+        },
+        {
+          "method": "GET",
+          "rule": "/api/admin/financial-report"
+        },
+        {
+          "method": "DELETE",
+          "rule": "/api/users/:id"
+        }
+      ],
+      "checks": [
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/checkout",
+          "status": 400
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/financial-report",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/users/1",
+          "status": 200
+        }
+      ],
+      "observed_defects": {
+        "card_logged": true,
+        "gateway_key_logged": true
+      },
+      "isolation": "in-memory database, synthetic data, loopback ephemeral port"
+    },
+    {
+      "project": "tasks",
+      "routes": [
+        {
+          "method": "GET",
+          "rule": "/"
+        },
+        {
+          "method": "GET",
+          "rule": "/categories"
+        },
+        {
+          "method": "POST",
+          "rule": "/categories"
+        },
+        {
+          "method": "DELETE",
+          "rule": "/categories/<int:cat_id>"
+        },
+        {
+          "method": "PUT",
+          "rule": "/categories/<int:cat_id>"
+        },
+        {
+          "method": "GET",
+          "rule": "/health"
+        },
+        {
+          "method": "POST",
+          "rule": "/login"
+        },
+        {
+          "method": "GET",
+          "rule": "/reports/summary"
+        },
+        {
+          "method": "GET",
+          "rule": "/reports/user/<int:user_id>"
+        },
+        {
+          "method": "GET",
+          "rule": "/tasks"
+        },
+        {
+          "method": "POST",
+          "rule": "/tasks"
+        },
+        {
+          "method": "DELETE",
+          "rule": "/tasks/<int:task_id>"
+        },
+        {
+          "method": "GET",
+          "rule": "/tasks/<int:task_id>"
+        },
+        {
+          "method": "PUT",
+          "rule": "/tasks/<int:task_id>"
+        },
+        {
+          "method": "GET",
+          "rule": "/tasks/search"
+        },
+        {
+          "method": "GET",
+          "rule": "/tasks/stats"
+        },
+        {
+          "method": "GET",
+          "rule": "/users"
+        },
+        {
+          "method": "POST",
+          "rule": "/users"
+        },
+        {
+          "method": "DELETE",
+          "rule": "/users/<int:user_id>"
+        },
+        {
+          "method": "GET",
+          "rule": "/users/<int:user_id>"
+        },
+        {
+          "method": "PUT",
+          "rule": "/users/<int:user_id>"
+        },
+        {
+          "method": "GET",
+          "rule": "/users/<int:user_id>/tasks"
+        }
+      ],
+      "checks": [
+        {
+          "method": "GET",
+          "path": "/",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/health",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/users",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/users",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/users/1",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/users/1",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/login",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/categories",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/categories",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/categories/1",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/tasks",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/tasks",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/tasks/1",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/tasks/1",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/tasks/search?q=Synthetic",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/tasks/stats",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/users/1/tasks",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/reports/summary",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/reports/user/1",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/tasks/1",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/categories/1",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/users/1",
+          "status": 200
+        }
+      ],
+      "observed_defects": {
+        "password_hash_exposed": true,
+        "fake_token": true
+      },
+      "isolation": "copied baseline, synthetic data; no externally bound server"
+    }
+  ]
+}

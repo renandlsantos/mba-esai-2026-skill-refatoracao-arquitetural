@@ -1,48 +1,43 @@
+"""Optional SMTP adapter; disabled unless explicitly configured by its caller."""
+
 import smtplib
-from datetime import datetime
+from email.message import EmailMessage
+
 
 class NotificationService:
-    def __init__(self):
-        self.notifications = []
-        self.email_host = 'smtp.gmail.com'
-        self.email_port = 587
-        self.email_user = 'taskmanager@gmail.com'
-        self.email_password = 'senha123'
+    def __init__(
+        self, host=None, port=587, username=None, password=None, enabled=False
+    ):
+        self.host, self.port, self.username, self.password, self.enabled = (
+            host,
+            port,
+            username,
+            password,
+            enabled,
+        )
 
     def send_email(self, to, subject, body):
-        try:
-
-            server = smtplib.SMTP(self.email_host, self.email_port)
-            server.starttls()
-            server.login(self.email_user, self.email_password)
-            message = f"Subject: {subject}\n\n{body}"
-            server.sendmail(self.email_user, to, message)
-            server.quit()
-            print(f"Email enviado para {to}")
-            return True
-        except Exception as e:
-            print(f"Erro ao enviar email: {str(e)}")
+        if not self.enabled:
             return False
+        if not all((self.host, self.username, self.password)):
+            raise ValueError("SMTP configuration required")
+        message = EmailMessage()
+        message["From"] = self.username
+        message["To"] = to
+        message["Subject"] = subject
+        message.set_content(body)
+        with smtplib.SMTP(self.host, self.port, timeout=5) as server:
+            server.starttls()
+            server.login(self.username, self.password)
+            server.send_message(message)
+        return True
 
     def notify_task_assigned(self, user, task):
-        subject = f"Nova task atribuída: {task.title}"
-        body = f"Olá {user.name},\n\nA task '{task.title}' foi atribuída a você.\n\nPrioridade: {task.priority}\nStatus: {task.status}"
-        self.send_email(user.email, subject, body)
-        self.notifications.append({
-            'type': 'task_assigned',
-            'user_id': user.id,
-            'task_id': task.id,
-            'timestamp': datetime.utcnow()
-        })
+        return self.send_email(
+            user.email, f"Nova task: {task.title}", f"Task {task.id} atribuída"
+        )
 
     def notify_task_overdue(self, user, task):
-        subject = f"Task atrasada: {task.title}"
-        body = f"Olá {user.name},\n\nA task '{task.title}' está atrasada!\n\nData limite: {task.due_date}"
-        self.send_email(user.email, subject, body)
-
-    def get_notifications(self, user_id):
-        result = []
-        for n in self.notifications:
-            if n['user_id'] == user_id:
-                result.append(n)
-        return result
+        return self.send_email(
+            user.email, f"Task atrasada: {task.title}", f"Prazo: {task.due_date}"
+        )

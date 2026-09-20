@@ -1,0 +1,210 @@
+{
+  "project": "tasks",
+  "routes": [
+    {
+      "method": "GET",
+      "rule": "/"
+    },
+    {
+      "method": "GET",
+      "rule": "/categories"
+    },
+    {
+      "method": "POST",
+      "rule": "/categories"
+    },
+    {
+      "method": "DELETE",
+      "rule": "/categories/<int:cat_id>"
+    },
+    {
+      "method": "PUT",
+      "rule": "/categories/<int:cat_id>"
+    },
+    {
+      "method": "GET",
+      "rule": "/health"
+    },
+    {
+      "method": "POST",
+      "rule": "/login"
+    },
+    {
+      "method": "GET",
+      "rule": "/reports/summary"
+    },
+    {
+      "method": "GET",
+      "rule": "/reports/user/<int:user_id>"
+    },
+    {
+      "method": "GET",
+      "rule": "/tasks"
+    },
+    {
+      "method": "POST",
+      "rule": "/tasks"
+    },
+    {
+      "method": "DELETE",
+      "rule": "/tasks/<int:task_id>"
+    },
+    {
+      "method": "GET",
+      "rule": "/tasks/<int:task_id>"
+    },
+    {
+      "method": "PUT",
+      "rule": "/tasks/<int:task_id>"
+    },
+    {
+      "method": "GET",
+      "rule": "/tasks/search"
+    },
+    {
+      "method": "GET",
+      "rule": "/tasks/stats"
+    },
+    {
+      "method": "GET",
+      "rule": "/users"
+    },
+    {
+      "method": "POST",
+      "rule": "/users"
+    },
+    {
+      "method": "DELETE",
+      "rule": "/users/<int:user_id>"
+    },
+    {
+      "method": "GET",
+      "rule": "/users/<int:user_id>"
+    },
+    {
+      "method": "PUT",
+      "rule": "/users/<int:user_id>"
+    },
+    {
+      "method": "GET",
+      "rule": "/users/<int:user_id>/tasks"
+    }
+  ],
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/users",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/users",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/users/1",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/users/1",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/login",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/categories",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/categories",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/categories/1",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/tasks",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/tasks",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/tasks/1",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/tasks/1",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/tasks/search?q=Synthetic",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/tasks/stats",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/users/1/tasks",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/reports/summary",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/reports/user/1",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/tasks/1",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/categories/1",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "path": "/users/1",
+      "status": 200
+    }
+  ],
+  "observed_defects": {
+    "password_hash_exposed": true,
+    "fake_token": true
+  },
+  "isolation": "copied baseline, synthetic data; no externally bound server"
+}

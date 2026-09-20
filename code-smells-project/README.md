@@ -1,12 +1,5 @@
 # code-smells-project
 
-API de E-commerce em Python/Flask usada como entrada do desafio `refactor-arch`.
+Aplicação educacional refatorada para MVC. Consulte [README da entrega](../README.md) para instalação, variáveis, testes e execução da skill.
 
-## Como rodar
-
-```bash
-pip install -r requirements.txt
-python app.py
-```
-
-A aplicação sobe em `http://localhost:5000`. O banco SQLite (`loja.db`) é criado automaticamente no primeiro boot, já com produtos e usuários de exemplo.
+Os comandos antigos de seed e boot irrestrito foram substituídos por factories, dados sintéticos explícitos e bind127.0.0.1. [Compatibilidade e migração](../reports/compatibility.md).

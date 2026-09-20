@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "lms",
+  "prompt": "Use the same $refactor-arch skill on this LMS Express backend, including checkout integrity and the financial report. Ask before the refactor.",
+  "assertions": [
+    "Reports correct stack and domain from observed sources",
+    "Contains at least five evidenced findings including HIGH/CRITICAL, two MEDIUM and two LOW",
+    "Preserves application source hashes at the confirmation boundary",
+    "After approval, boots and exercises every original method/path",
+    "Contains no private transcripts or secret values in report"
+  ]
+}

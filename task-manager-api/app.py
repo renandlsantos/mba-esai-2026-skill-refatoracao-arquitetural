@@ -1,34 +1,46 @@
+import os
+from pathlib import Path
 from flask import Flask
-from flask_cors import CORS
 from database import db
-from routes.task_routes import task_bp
-from routes.user_routes import user_bp
-from routes.report_routes import report_bp
-import os, sys, json, datetime
+from config import settings
+from errors import register_errors
+from repositories.store import Store
+from controllers.tasks import TaskController
+from controllers.users import UserController
+from controllers.reports import ReportController
+from routes import task_routes, user_routes, report_routes
+from utils.clock import utc_now
 
-app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'super-secret-key-123'
+def create_app(config=None):
+    app = Flask(__name__)
+    app.config.from_mapping(settings())
+    app.config.update(config or {})
+    Path(app.instance_path).mkdir(parents=True, exist_ok=True)
+    db.init_app(app)
+    with app.app_context():
+        db.create_all()
+    store = Store()
+    tasks = TaskController(store)
+    users = UserController(store)
+    reports = ReportController(store)
+    app.register_blueprint(task_routes.create_routes(tasks, reports))
+    app.register_blueprint(user_routes.create_routes(users, tasks))
+    app.register_blueprint(report_routes.create_routes(reports))
+    app.add_url_rule(
+        "/health", "health", lambda: {"status": "ok", "timestamp": str(utc_now())}
+    )
+    app.add_url_rule(
+        "/", "index", lambda: {"message": "Task Manager API", "version": "1.0"}
+    )
+    register_errors(app)
+    return app
 
-CORS(app)
-db.init_app(app)
 
-app.register_blueprint(task_bp)
-app.register_blueprint(user_bp)
-app.register_blueprint(report_bp)
-
-@app.route('/health')
-def health():
-    return {'status': 'ok', 'timestamp': str(datetime.datetime.now())}
-
-@app.route('/')
-def index():
-    return {'message': 'Task Manager API', 'version': '1.0'}
-
-with app.app_context():
-    db.create_all()
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    create_app().run(
+        host="127.0.0.1",
+        port=int(os.getenv("PORT", "5000")),
+        debug=False,
+        load_dotenv=False,
+    )

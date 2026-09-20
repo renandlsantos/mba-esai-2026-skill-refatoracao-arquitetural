@@ -1,0 +1,13 @@
+✔ all routes, checkout denial, admin and dependent cleanup (73.533667ms)
+✔ invalid input and secrets never enter logs (53.299ms)
+✔ failed payment insert rolls back user, enrollment and payment (25.146375ms)
+✔ concurrent checkouts serialize transactions and report query count stays bounded (175.756875ms)
+✔ password hashes use independent salts and reject wrong values (83.285792ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 551.601625

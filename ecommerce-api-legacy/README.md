@@ -1,14 +1,5 @@
 # ecommerce-api-legacy
 
-LMS API (com fluxo de checkout) em Node.js/Express usada como entrada do desafio `refactor-arch`.
+Aplicação educacional refatorada para MVC. Consulte [README da entrega](../README.md) para instalação, variáveis, testes e execução da skill.
 
-## Como rodar
-
-```bash
-npm install
-npm start
-```
-
-A aplicação sobe em `http://localhost:3000`. O banco SQLite é em memória e já carrega seeds automaticamente no boot.
-
-Exemplos de requisições estão em `api.http`.
+Os comandos antigos de seed e boot irrestrito foram substituídos por factories, dados sintéticos explícitos e bind127.0.0.1. [Compatibilidade e migração](../reports/compatibility.md).

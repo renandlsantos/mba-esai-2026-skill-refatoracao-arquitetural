@@ -1,13 +1,17 @@
 {
   "name": "desafio-arquitetura-ia-boilerplate",
   "version": "1.0.0",
-  "description": "Boilerplate com código legado para refatoração",
+  "description": "Boilerplate com c\u00f3digo legado para refatora\u00e7\u00e3o",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "test": "node --test test/*.test.js"
   },
   "dependencies": {
     "express": "^4.18.2",
     "sqlite3": "^5.1.6"
-  }
+  },
+  "trustedDependencies": [
+    "sqlite3"
+  ]
 }

@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "shop",
+  "prompt": "Use $refactor-arch to audit this Flask shop API. Show exact findings and a plan; wait for my confirmation before changing sources.",
+  "assertions": [
+    "Reports correct stack and domain from observed sources",
+    "Contains at least five evidenced findings including HIGH/CRITICAL, two MEDIUM and two LOW",
+    "Preserves application source hashes at the confirmation boundary",
+    "After approval, boots and exercises every original method/path",
+    "Contains no private transcripts or secret values in report"
+  ]
+}
